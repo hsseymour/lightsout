@@ -1,0 +1,117 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: rgb(50, 50, 50);
+}
+.pageTitle {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(50, 50, 50);
+  background-color: rgb(255, 255, 50);
+  width: 200px;
+  line-height: 2;
+  margin: 20px auto 30px;
+  border: 2px solid black;
+}
+.levelText {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  margin: 10px;
+}
+.gameTable {
+  margin: 10px auto;
+  background-color: rgb(150, 150, 150);
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 40px;
+}
+.cell {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(150, 150, 200);
+}
+.cell:active {
+  background-color: rgb(205, 205, 0);
+}
+.isCellLit-true {
+  background-color: rgb(255, 255, 50);
+}
+.isCellLit-false {
+}
+.resetButton {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  border-radius: 15px;
+}
+.resetButton:active {
+  background-color: rgb(225, 225, 225);
+}
+.scoreHeader {
+  text-align: center;
+  font-size: 20px;
+  margin: 15px 0px 2px 0px;
+}
+.scoreButton {
+  display: block;
+  width: 150px;
+  margin: auto;
+  font-size: 17px;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  border-radius: 15px;
+}
+.scoreButton:active {
+  background-color: rgb(225, 225, 225);
+}
+.timerText {
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+.center-div {
+  justify-content: center;
+  width: 250px;
+  grid-column: 2;
+}
+.right-div {
+  background-color: rgb(225, 225, 255);
+  width: 200px;
+  height: 300px;
+  max-height: 300px;
+  margin: 20px auto;
+  grid-column: 3;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+  }
+  .right-div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .center-div {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
