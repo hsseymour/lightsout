@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useReducer } from "react";
+import { useEffect, useState, useContext } from "react";
 import { ScoreContext } from "../globalManagement/scoreContext";
 
 export const CreateTimer = ({ gameLevel }) => {
