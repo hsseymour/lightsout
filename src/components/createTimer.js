@@ -4,11 +4,12 @@ import { ScoreContext } from "../globalManagement/scoreContext";
 export const CreateTimer = ({ gameLevel }) => {
   const [time, setTime] = useState(0);
   const [score, setScore] = useContext(ScoreContext);
+  const [firstTime, setFirstTime] = useState(new Date().getTime());
 
   useEffect(() => {
-    const firstTime = new Date().getTime();
+    setFirstTime(new Date().getTime());
     const timerId = setInterval(() => {
-      UpdateTimer(firstTime);
+      UpdateTimer();
     }, 10);
 
     return () => {
@@ -22,11 +23,13 @@ export const CreateTimer = ({ gameLevel }) => {
       const newScoreArray = score;
       newScoreArray[gameLevel - 2].time = time;
       setScore(newScoreArray);
+    } else {
+      setFirstTime(new Date().getTime());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameLevel]);
 
-  const UpdateTimer = (firstTime) => {
+  const UpdateTimer = () => {
     const newTime = new Date().getTime();
     const elapsedTime = newTime - firstTime;
 

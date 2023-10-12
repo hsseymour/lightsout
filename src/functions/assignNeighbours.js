@@ -16,7 +16,7 @@ export const AssignNeigbours = (gridArray) => {
   for (let i = 0; i < newGridArray.length; i++) {
     for (let j = 0; j < newGridArray[i].length; j++) {
       for (let q = 0; q < Neighbours.length; q++) {
-        const rnd = Random(0, 1);
+        const rnd = Random(0, 3);
         if (rnd === 1) {
           if (
             i + Neighbours[q].x >= 0 &&
